@@ -26,7 +26,7 @@ L'application doit comprendre les fonctionnalités suivantes :
 - [ ] Supprimer l'ensemble des TAR
 - [ ] Ajouter une TAR. 
 
-Il est bien sûr autorisé de donner un peu de style à l'application.
+Il est bien sûr autorisé de donner du style à l'application. De plus, il est imposé d'utiliser `Expo.SecureStore` pour la persistance des données.
 
 ## Informations
 
