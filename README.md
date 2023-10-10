@@ -26,7 +26,7 @@ L'application doit comprendre les fonctionnalités suivantes :
 - [ ] Supprimer l'ensemble des TAR
 - [ ] Ajouter une TAR. Les TAR doivent persister.
 - [ ] Possibilité de passser le statut d'une TAR `complétée` au statut `en cours` (et inversement)
-- [ ] Possibilité de balayer (swipe) les TAR dans les listes pour les supprimer. Il n'est pas nécessaire d'utiliser une bibliothèque
+- [ ] Possibilité de balayer (swipe) les TAR dans les listes pour les supprimer.
 
 Il est bien sûr autorisé de donner du style à l'application. De plus, il est imposé d'utiliser `Expo.SecureStore` pour la persistance des données.
 
