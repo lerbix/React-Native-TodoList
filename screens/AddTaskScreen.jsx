@@ -33,8 +33,6 @@ const AddTask = ({ route }) => {
         console.log('Task successfully saved');
       });
 
-      // Call the refreshTaskList callback to refresh the task list
-      route.params.refreshTaskList();
 
       // Après avoir stocké la tâche, retournez à l'écran précédent
       navigation.goBack();

@@ -6,6 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import { storeTasks, retrieveTasks } from '../SecureStore';
 import { GestureHandlerRootView, RectButton, } from 'react-native-gesture-handler';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { useFocusEffect } from '@react-navigation/native';
 
 
 const TaskListScreen = () => {
@@ -25,6 +26,13 @@ const TaskListScreen = () => {
     storeTasks(tasks);
   }, [tasks]);
 
+  useFocusEffect(
+    React.useCallback(() => {
+      retrieveTasks().then((storedTasks) => {
+        setTasks(storedTasks);
+      });
+    }, [])
+  );
 
   const handleToggleStatus = (taskId) => {
     // Recherchez la tâche dans la liste des tâches en utilisant son ID
@@ -57,13 +65,7 @@ const TaskListScreen = () => {
 
   const handleAddTaskNavigation = () => {
     // Navigate to the "AddTaskScreen" and pass a callback function to refresh the task list
-    navigation.navigate('Add Task', {
-      refreshTaskList: () => {
-        retrieveTasks().then((storedTasks) => {
-          setTasks(storedTasks);
-        });
-      },
-    });
+    navigation.navigate('Add Task');
   };
 
   const handleDeleteAllTasks = () => {
